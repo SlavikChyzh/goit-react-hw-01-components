@@ -1,8 +1,19 @@
+import { Profile } from "./Profile/Profile";
+import user from '../data/user'
+import { Statistics } from "./Statistics/Statistics";
+import statisticData from "../data/statistic";
+import { FriendsList } from "./FriendList/FriendList";
+import friends from "../data/friends"
+import { TransactionList } from "./TransactionList/TransactionList";
+import transactions from "../data/transactions"
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
+  <>
+    <h1
+    style={{
+        height: '100px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -11,6 +22,24 @@ export const App = () => {
       }}
     >
       React homework template
-    </div>
+    </h1>
+
+      <h3>Task 1</h3>
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      <h3>Task 2</h3>
+      <Statistics statisticsData={statisticData}/>
+
+      <h3>Task 3</h3>
+      <FriendsList friendsList={friends} />
+      <h3>Task 4</h3>  
+      <TransactionList transactions={ transactions} />
+
+    </>
   );
 };

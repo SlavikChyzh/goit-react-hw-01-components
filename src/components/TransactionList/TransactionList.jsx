@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Transaction } from "components/Transaction/Transaction";
 
 export const TransactionList = ({ transactions }) => (
@@ -17,3 +18,6 @@ export const TransactionList = ({ transactions }) => (
   </table>
 )
 
+TransactionList.propTypes = {
+  transactions: PropTypes.arrayOf(PropTypes.object)
+}

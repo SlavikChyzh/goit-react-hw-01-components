@@ -25,13 +25,7 @@ export const App = () => {
     </h1>
 
       <h3>Task 1</h3>
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+      <Profile user={user} />
       <h3>Task 2</h3>
       <Statistics statisticsData={statisticData}/>
 

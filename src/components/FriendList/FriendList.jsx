@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { FriendsListItem } from "components/FriendListItem/FriendListItem";
+import { FriendsListTeg } from './FriendList.styled'
 
 export const FriendsList = ({ friendsList }) => (
-  <ul className="friend-list">
+  <FriendsListTeg className="friend-list">
     {friendsList.map(someFriend => <FriendsListItem friend={someFriend} online={someFriend.isOnline} key={someFriend.id} />)}
-  </ul>
+  </FriendsListTeg>
 )
 
 FriendsList.propTypes = {

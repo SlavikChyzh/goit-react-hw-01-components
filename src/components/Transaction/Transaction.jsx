@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { TransactionTD, TransactionName} from"./Transaction.styled"
 
 export const Transaction = ({ transaction }) => (
   <tr>
-    <td className="type">{transaction.type}</td>
-    <td className="amount">{ transaction.amount}</td>
-    <td className="currency">{ transaction.currency}</td>
+    <TransactionName className="type">{transaction.type}</TransactionName>
+    <TransactionTD className="amount">{ transaction.amount}</TransactionTD>
+    <TransactionTD className="currency">{ transaction.currency}</TransactionTD>
   </tr>
 )
 

@@ -4,7 +4,7 @@ import { FriendsListTeg } from './FriendList.styled'
 
 export const FriendsList = ({ friendsList }) => (
   <FriendsListTeg className="friend-list">
-    {friendsList.map(someFriend => <FriendsListItem avatar={someFriend.avatar} name={someFriend.name} online={someFriend.isOnline} key={someFriend.id} />)}
+    {friendsList.map(({avatar,name,isOnline,id}) => <FriendsListItem avatar={avatar} name={name} online={isOnline} key={id} />)}
   </FriendsListTeg>
 )
 
@@ -12,9 +12,9 @@ FriendsList.propTypes = {
   friendsList: PropTypes.arrayOf(PropTypes.shape(
     {
       id: PropTypes.number.isRequired,
-      avatar: PropTypes.string,
-      name: PropTypes.string,
-      online: PropTypes.bool
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      online: PropTypes.bool.isRequired
     }
   ))
 }

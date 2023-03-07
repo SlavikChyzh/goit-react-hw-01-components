@@ -10,7 +10,7 @@ export const FriendsListItem = ({ avatar,name, online }) => (
 )
 
 FriendsListItem.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  online: PropTypes.bool
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  online: PropTypes.bool.isRequired
 }

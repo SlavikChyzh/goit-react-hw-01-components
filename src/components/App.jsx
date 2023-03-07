@@ -24,16 +24,15 @@ export const App = () => {
       React homework template
     </h1>
 
-      <h3>Task 1</h3>
-      <Profile user={user} />
-      <h3>Task 2</h3>
-      <Statistics statisticsData={statisticData}/>
-
-      <h3>Task 3</h3>
-      <FriendsList friendsList={friends} />
-      <h3>Task 4</h3>  
-      <TransactionList transactions={ transactions} />
-
+    <h3>Task 1</h3>
+    <Profile userName={user.name} tag={user.tag} location={user.location} avatar={user.avatar} stats={user.stats} />
+    <h3>Task 2</h3>
+    <Statistics statisticsData={statisticData} />
+    <Statistics statisticsData={statisticData} title='Upload' />
+    <h3>Task 3</h3>
+    <FriendsList friendsList={friends} />
+    <h3>Task 4</h3>  
+    <TransactionList transactions={ transactions} />
     </>
   );
 };

@@ -7,9 +7,9 @@ import {
   StatisticItem 
 } from './Statistics.styled';
 
-export const Statistics = ({ statisticsData }) => (
+export const Statistics = ({ statisticsData, title }) => (
   <StatisticSection className="statistics">
-    <StatisticTitle className="title">Upload stats</StatisticTitle>
+    {title?<StatisticTitle className="title">{title}</StatisticTitle> : ''}
     <StatisticList className="stat-list">
       {statisticsData.map((statisticItem) => (
         <StatisticItem className="item" key={statisticItem.id}>
@@ -22,9 +22,10 @@ export const Statistics = ({ statisticsData }) => (
 )
 
 Statistics.propTypes = {
+  title: PropTypes.string,
   statisticsData: PropTypes.arrayOf(
     PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     label: PropTypes.string,
     percentage: PropTypes.number
   }))

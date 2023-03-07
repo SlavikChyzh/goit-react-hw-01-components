@@ -12,7 +12,12 @@ export const TransactionList = ({ transactions }) => (
       </tr>
     </TransactionListHeader>
     <tbody>
-      {transactions.map(transaction => <Transaction transaction={transaction} key={transaction.id } />)}
+      {transactions.map(transaction => <Transaction
+        type={transaction.type}
+        amount={transaction.amount}
+        currency={transaction.currency}
+        key={transaction.id} />)
+      }
     </tbody>
   </TransactionListTable>
 )

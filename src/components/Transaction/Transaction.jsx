@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import { TransactionTD, TransactionName} from"./Transaction.styled"
 
-export const Transaction = ({ transaction }) => (
+export const Transaction = ({ 
+  type,
+  amount,
+  currency }) => (
   <tr>
-    <TransactionName className="type">{transaction.type}</TransactionName>
-    <TransactionTD className="amount">{ transaction.amount}</TransactionTD>
-    <TransactionTD className="currency">{ transaction.currency}</TransactionTD>
+    <TransactionName className="type">{type}</TransactionName>
+    <TransactionTD className="amount">{ amount}</TransactionTD>
+    <TransactionTD className="currency">{currency}</TransactionTD>
   </tr>
 )
 
 Transaction.propTypes = {
-  transaction: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    amount: PropTypes.string,
-    currency: PropTypes.string
-  })
+  id: PropTypes.string,
+  type: PropTypes.string,
+  amount: PropTypes.string,
+  currency: PropTypes.string
 }
